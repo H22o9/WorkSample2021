@@ -51,7 +51,8 @@ En el segundo parametro, ponemos como vamos a querer llamar al archivo, puede se
 
 **Seguridad:** 
 - Conocer las IP publicas (de los que necesitan usar el bucket), estando conectado a la VPN de Mercado Libre y habilitar en la politica del bucket solo esas IP. De esta forma, se accede por internet, pero solo aquellos que cumplen con estos requisitos pueden acceder y modificar el bucket.
-- Tambien se puede usar el dar permisos a los grupos que correspondan y los usuarios se distribuyen en esos grupos.  
+- Tambien se puede usar el dar permisos a los grupos que correspondan y los usuarios se distribuyen en esos grupos.
+- Tambien estan los PrivateLink, que nos dan una IP de nuestra VPC en AWS y todo el trafico que queremos manejar para ahi, lo rutea por adentro. 
 
 **Funcionalidades**: 
 - Esto de usar un script es mucho mas util para eventos en schedule. Por ejemplo, subimos un archivo a un bucket s3, dentro de ese bucket tenemos un evento que dispara una funcion lamdda, que con pyhton levanta el archivo del bucket s3 y se lo pasa el EC2. De ahi el EC2, lo procesa. 
